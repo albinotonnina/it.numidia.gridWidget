@@ -1,0 +1,7 @@
+<Alloy>
+	<Window class="container">
+		<View id="content">
+			<Require id="grid" src="it.numidia.grid" type="widget"  />
+		</View>
+	</Window>
+</Alloy>

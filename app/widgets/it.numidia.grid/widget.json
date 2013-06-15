@@ -1,0 +1,13 @@
+{
+	"id": "it.numidia.grid",
+	"name": "it.numidia.grid",
+	"description" : "a grid panel",
+	"author": "Albino Tonnina",
+	"version": "1.0",
+	"copyright":"Copyright (c) 2013",
+	"license":"Apache License, Version 2.0",
+	"min-alloy-version": "1.0",
+	"min-titanium-version":"3.0",
+	"tags":"grid,table,tabular data",
+	"platforms":"android,ios"
+}

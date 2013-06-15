@@ -1,0 +1,11 @@
+"#Wrapper": {
+    width : 'auto',
+    height : 'auto'   
+},"#Container": {
+	layout:'horizontal',
+	height:Ti.UI.SIZE,
+    width : Ti.UI.SIZE,
+    touchEnabled: false
+}
+
+ 
