@@ -1,0 +1,11 @@
+"#tableView": {
+	top:0,
+	width:Ti.UI.FILL,
+	separatorColor: "#cbcbcb",
+	scrollsToTop: true,
+	backgroundColor:"#e8e8e8",
+	allowsSelection:true
+}
+
+
+ 

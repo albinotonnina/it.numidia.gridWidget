@@ -1,0 +1,9 @@
+"#icon": {	
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	font:{
+
+		},
+
+	textAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_BOTTOM
+}
