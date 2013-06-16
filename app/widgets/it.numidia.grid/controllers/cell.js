@@ -32,20 +32,13 @@ function setImage(_props) {
 }
 
 
-function applyProperties(properties) {
+function applyProperties(_props) {
+
+
 	var apply = {};
 
-	if (properties.height) {
-		apply.height = properties.height;
-	}
-
-	if (properties.width) {
-		apply.width = properties.width;
-	}
-
-	if (properties.backgroundColor) {
-		apply.backgroundColor = properties.backgroundColor;
-	}
+	//Underscode.js love
+	_.extend(apply, _.pick(_props, 'height','width', 'backgroundColor', 'borderColor'));
 
 
 

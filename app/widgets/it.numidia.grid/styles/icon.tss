@@ -4,6 +4,6 @@
 	font:{
 
 		},
-
+	color:'#515151',
 	textAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_BOTTOM
 }
