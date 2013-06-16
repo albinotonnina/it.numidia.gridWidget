@@ -202,7 +202,6 @@ function BindRow(r, dataRow) {
 //
 // BindCell
 // Binds the data to one cell.
-// For internal use only!
 // r: Number of the row.
 // c: Number of the column.
 // x: X-coordinate.

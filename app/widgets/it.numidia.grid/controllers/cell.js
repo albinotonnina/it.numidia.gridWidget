@@ -31,8 +31,6 @@ function setImage(_props) {
 	return Widget.createController("image", _props);
 }
 
-
-<<<<<<< HEAD
 function applyProperties(_props) {
 
 
@@ -40,7 +38,7 @@ function applyProperties(_props) {
 
 	//Underscode.js love
 	_.extend(apply, _.pick(_props, 'height','width', 'backgroundColor', 'borderColor'));
-=======
+
 function applyProperties(properties) {
 	var apply = {};
 
@@ -55,10 +53,6 @@ function applyProperties(properties) {
 	if (properties.backgroundColor) {
 		apply.backgroundColor = properties.backgroundColor;
 	}
->>>>>>> 83713b5ea8a2a87b4168d4b753ffb77332b1ed81
-
-
-
 	$.Wrapper.applyProperties(apply);
 }
 

@@ -1,4 +1,3 @@
-var xvar = null;
 
 function applyProperties(properties) {
 	var apply = {};
