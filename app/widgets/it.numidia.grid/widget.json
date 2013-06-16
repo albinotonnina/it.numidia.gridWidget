@@ -8,6 +8,6 @@
 	"license":"Apache License, Version 2.0",
 	"min-alloy-version": "1.0",
 	"min-titanium-version":"3.0",
-	"tags":"grid,table,tabular data",
+	"tags":"grid,table,tabular data,grids",
 	"platforms":"android,ios"
 }
