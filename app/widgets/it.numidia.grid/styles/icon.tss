@@ -4,6 +4,10 @@
 	font:{
 
 		},
+<<<<<<< HEAD
 	color:'#515151',
+=======
+
+>>>>>>> 83713b5ea8a2a87b4168d4b753ffb77332b1ed81
 	textAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_BOTTOM
 }
