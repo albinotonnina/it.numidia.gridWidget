@@ -31,33 +31,26 @@ function setImage(_props) {
 	return Widget.createController("image", _props);
 }
 
+
 function applyProperties(_props) {
-
-
 	var apply = {};
 
-	//Underscode.js love
-	_.extend(apply, _.pick(_props, 'height','width', 'backgroundColor', 'borderColor'));
 
-function applyProperties(properties) {
-	var apply = {};
+	_props.height = _props.height + 'dp';
+	_props.width = _props.width + 'dp';
 
-	if (properties.height) {
-		apply.height = properties.height;
-	}
 
-	if (properties.width) {
-		apply.width = properties.width;
-	}
+	//_.extend(apply, _.pick(_props, 'height','width', 'backgroundColor', 'borderColor', 'borderWidth'));
 
-	if (properties.backgroundColor) {
-		apply.backgroundColor = properties.backgroundColor;
-	}
+	_.extend(apply, _props);
+
+
+
 	$.Wrapper.applyProperties(apply);
 }
 
 if (arguments[0]) {
-	$.Wrapper.applyProperties(arguments[0]);
+	applyProperties(arguments[0]);
 }
 
 exports.applyProperties = applyProperties;

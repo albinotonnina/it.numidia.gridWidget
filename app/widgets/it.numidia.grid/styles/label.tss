@@ -2,16 +2,9 @@
 	width: Ti.UI.SIZE,
 	height: Ti.UI.SIZE,
 	textAlign: 'center',
-<<<<<<< HEAD
 	color:'#515151',
 	font: {
 		fontSize: '12dp',
 		fontWeight: 'normal'
-=======
-	color:'#000000',
-	font: {
-		fontSize: '12dp',
-		fontWeight:'normal'
->>>>>>> 83713b5ea8a2a87b4168d4b753ffb77332b1ed81
 	}
 }

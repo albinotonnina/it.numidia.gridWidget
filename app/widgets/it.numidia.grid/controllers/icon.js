@@ -15,7 +15,7 @@ function applyProperties(_props) {
 		});
 	}
 
-	// Change icon
+
 	if (_props.icon) {
 		_icon = _props.icon;
 	}

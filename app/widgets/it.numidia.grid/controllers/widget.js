@@ -1,7 +1,7 @@
 var args = arguments[0] || {};
 
 var columnWidth = null;
-var cellSpacing = 0;
+var cellSpacing = -1;
 
 var clickEvent = null;
 
@@ -151,6 +151,7 @@ function GridClick(e) {
 //
 // DataBind
 //
+
 function DataBind(_data) {
 	var tableViewData = [];
 	for (var r = 0; r < _data.length; r++) {
@@ -163,12 +164,15 @@ function DataBind(_data) {
 //
 // BindRow
 //
+
 function BindRow(r, dataRow) {
 
-	var rowHeight = getRowHeight();
-	var createOptions = {
-		height: rowHeight
-	};
+	dataRow.height = dataRow.height ? dataRow.height : getRowHeight();
+
+	var createOptions = {};
+	_.extend(createOptions, _.pick(dataRow, 'height', 'width', 'backgroundColor', 'borderColor', 'borderWidth'));
+
+
 
 	if (dataRow.isSection) {
 		var row = Widget.createController("section", createOptions);
@@ -180,7 +184,7 @@ function BindRow(r, dataRow) {
 	for (var c = 0; c < dataRow.Cells.length; c++) {
 		var width = columnWidth[c];
 
-		var view = BindCell(r, c, x, width, rowHeight, dataRow.Cells[c]);
+		var view = BindCell(r, c, x, width, dataRow.height, dataRow.Cells[c]);
 		for (var l = 0; l < view.length; l++) {
 			row.addCell(view[l]);
 		}
@@ -215,19 +219,20 @@ function BindCell(r, c, x, width, height, dataCell) {
 	var view = [];
 
 
-	Ti.API.info("dataCell: " + JSON.stringify(dataCell));
+	var cellOptions = {};
 
-	var cellOptions = {
+	_.extend(cellOptions, _.pick(dataCell, 'backgroundColor', 'borderColor', 'borderWidth'));
+
+	_.extend(cellOptions, {
 		left: x + 'dp',
 		top: 0,
-		width: width + 'dp',
+		width: width,
 		height: height,
 		DataRow: r,
 		DataColumn: c,
 		Grid: $.Wrapper
-	};
+	});
 
-_.extend(cellOptions, _.pick(dataCell, 'height','width', 'backgroundColor', 'borderColor', 'borderWidth'));
 
 
 	var cell = Widget.createController("cell", cellOptions);
@@ -247,5 +252,5 @@ _.extend(cellOptions, _.pick(dataCell, 'height','width', 'backgroundColor', 'bor
 //
 
 function getRowHeight() {
-	return '47dp';
+	return 32;
 }

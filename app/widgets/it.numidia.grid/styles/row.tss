@@ -1,10 +1,9 @@
 "#Wrapper": {
-    backgroundColor: '#c0c0c0',
     className: 'gridrow',
     width: Ti.UI.FILL,
     backgroundSelectedColor:"#dbdbdb",
 	selectedBackgroundColor:"#dbdbdb",
-	backgroundColor:"#e8e8e8"
+	backgroundColor:"#ffffff"
 }
 
  

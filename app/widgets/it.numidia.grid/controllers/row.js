@@ -1,10 +1,12 @@
 
-function applyProperties(properties) {
-	var apply = {};
 
-		if (properties.height) {
-			apply.height = properties.height;
-		}
+function applyProperties(_props) {
+	var apply = {};
+	_props.height = _props.height + 'dp';
+	_props.width = _props.width + 'dp';
+	//Underscode.js love
+	_.extend(apply, _.pick(_props, 'height','width', 'backgroundColor', 'borderColor', 'borderWidth'));
+
 	
 	$.Wrapper.applyProperties(apply);
 }
