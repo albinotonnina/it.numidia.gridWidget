@@ -1,7 +1,7 @@
 var args = arguments[0] || {};
 
 var columnWidth = null;
-var cellSpacing = 1;
+var cellSpacing = 0;
 
 var clickEvent = null;
 
@@ -83,8 +83,8 @@ exports.Section = function(_section) {
 //
 // Cell
 //
-exports.Cell = function(_cell) {
-	var cell = _cell ? _cell : {};
+exports.Cell = function(_props) {
+	var cell = _props ? _props : {};
 	cell.Entry = [];
 
 	cell.addIcon = function(entry) {
@@ -202,6 +202,7 @@ function BindRow(r, dataRow) {
 //
 // BindCell
 // Binds the data to one cell.
+// For internal use only!
 // r: Number of the row.
 // c: Number of the column.
 // x: X-coordinate.
@@ -212,16 +213,23 @@ function BindRow(r, dataRow) {
 
 function BindCell(r, c, x, width, height, dataCell) {
 	var view = [];
+
+
+	Ti.API.info("dataCell: " + JSON.stringify(dataCell));
+
 	var cellOptions = {
 		left: x + 'dp',
 		top: 0,
 		width: width + 'dp',
+		height: height,
 		DataRow: r,
 		DataColumn: c,
-		Grid: $.Wrapper,
-		backgroundColor: dataCell.backgroundColor,
-		height: height
+		Grid: $.Wrapper
 	};
+
+_.extend(cellOptions, _.pick(dataCell, 'height','width', 'backgroundColor', 'borderColor', 'borderWidth'));
+
+
 	var cell = Widget.createController("cell", cellOptions);
 	view.push(cell);
 	if (dataCell.Entry.length > 0) {
